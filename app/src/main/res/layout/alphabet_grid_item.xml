@@ -18,6 +18,7 @@
         android:layout_width="60sp"
         android:layout_height="60sp"
         android:layout_weight="1"
+        android:fontFamily="sans-serif"
         android:gravity="center_horizontal"
         android:text="A"
         android:textSize="30sp" />

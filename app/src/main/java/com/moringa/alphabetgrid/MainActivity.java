@@ -2,6 +2,8 @@ package com.moringa.alphabetgrid;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.widget.GridView;
 
@@ -16,7 +18,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Typeface typeface =  Typeface.createFromAsset(getAssets(), "fonts/oswald.ttf");
         gridView = (GridView) findViewById(R.id.baseGridView);
-        gridView.setAdapter(new AlphabetAdapter(this, letters));
+        gridView.setAdapter(new AlphabetAdapter(this, letters, typeface));
     }
 }

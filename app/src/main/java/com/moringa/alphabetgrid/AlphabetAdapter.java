@@ -1,6 +1,7 @@
 package com.moringa.alphabetgrid;
 
 import android.content.Context;
+import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,10 +12,12 @@ public class AlphabetAdapter extends BaseAdapter {
 
     private Context mContext;
     private String[] mLetters;
+    private Typeface mTypeface;
 
-    public AlphabetAdapter(Context mContext, String[] mLetters) {
+    public AlphabetAdapter(Context mContext, String[] mLetters, Typeface mTypeface) {
         this.mContext = mContext;
         this.mLetters = mLetters;
+        this.mTypeface = mTypeface;
     }
 
     @Override
@@ -45,7 +48,8 @@ public class AlphabetAdapter extends BaseAdapter {
             TextView letterView = (TextView) gridView
                     .findViewById(R.id.grid_item_letter);
             // set values into views
-            letterView.setText(mLetters[i]);  // using dummy data for now
+            letterView.setText(mLetters[i]);// using dummy data for now
+            letterView.setTypeface(mTypeface);
 
         } else {
             gridView = (View) convertView;
